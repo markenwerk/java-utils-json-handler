@@ -44,7 +44,7 @@ This library provides the [`JsonHandler`][JsonHandler] interface which provides 
 - A [`JavaTextJsonHandler`][JavaTextJsonHandler] from the JSON [text handler library](https://github.com/markenwerk/java-utils-json-handler-text) creates a [`String`][String] containing a text that mimics the `toString()` behavior of Java collection classes and represents the described JSON document. 
 - A [`JsonTextJsonHandler`][JsonTextJsonHandler] from the JSON [text handler library](https://github.com/markenwerk/java-utils-json-handler-text) creates a [`String`][String] containing a JSON text that represents the described JSON document. 
 - A [`JsonValueJsonHandler`][JsonValueJsonHandler] creates a [`JsonValue`] that represents the described JSON document. 
-- A [`NullTextJsonHandler`] from this library is an empty implementation that does nothing.
+- A [`NullJsonHandler`][NullJsonHandler] from this library is an empty implementation that does nothing.
 - A [`XmlDocumentJsonHandler`][XmlDocumentJsonHandler] from the JSON [XML handler library](https://github.com/markenwerk/java-utils-json-handler-xml) creates a XML [`Document`][Document] that represents the described JSON document.
 
 #### Available used of JSON handlers
@@ -180,7 +180,7 @@ handler.onDocumentEnd();
 
 [JsonHandler]: http://markenwerk.github.io/java-utils-json-handler/index.html?net/markenwerk/utils/json/handler/JsonHandler.html
 [JsonHandlingException]: http://markenwerk.github.io/java-utils-json-handler/index.html?net/markenwerk/utils/json/handler/JsonHandlingException.html
-[NullTextJsonHandler]: http://markenwerk.github.io/java-utils-json-handler/index.html?net/markenwerk/utils/json/handler/NullTextJsonHandler.html
+[NullJsonHandler]: http://markenwerk.github.io/java-utils-json-handler/index.html?net/markenwerk/utils/json/handler/NullJsonHandler.html
 
 [AppendingJavaTextJsonHandler]: https://markenwerk.github.io/java-utils-json-handler-text/index.html?net/markenwerk/utils/json/handler/text/AppendingJavaTextJsonHandler.html
 [AppendingJsonTextJsonHandler]: https://markenwerk.github.io/java-utils-json-handler-text/index.html?net/markenwerk/utils/json/handler/text/AppendingJsonTextJsonHandler.html
@@ -189,7 +189,13 @@ handler.onDocumentEnd();
 
 [XmlDocumentJsonHandler]: http://markenwerk.github.io/java-utils-json-handler-xml/index.html?net/markenwerk/utils/json/handler/xml/XmlDocumentJsonHandler.html
 
+[InvalidJsonValueException]: http://markenwerk.github.io/java-utils-json-common/index.html?net/markenwerk/utils/json/common/InvalidJsonValueException.html
+
+[JsonPushParser]: http://markenwerk.github.io/java-utils-json-parser/index.html?net/markenwerk/utils/json/common/JsonPushParser.html
+
 [JsonDocument]: https://markenwerk.github.io/java-utils-json-model/index.html?net/markenwerk/utils/json/model/JsonDocument.html
+[JsonValue]: https://markenwerk.github.io/java-utils-json-model/index.html?net/markenwerk/utils/json/model/JsonValue.html
+[JsonValueJsonHandler]: https://markenwerk.github.io/java-utils-json-model/index.html?net/markenwerk/utils/json/model/processing/JsonValueJsonHandler.html
 
 [Appendable]: http://docs.oracle.com/javase/8/docs/api/index.html?java/lang/Appendable.html
 [Document]: https://docs.oracle.com/javase/8/docs/api/index.html?org/w3c/dom/Document.html
