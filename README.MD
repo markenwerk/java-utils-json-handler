@@ -178,6 +178,7 @@ handler.onDocumentBegin();
 handler.onDocumentEnd();
 ```
 
+[IdleJsonHandler]: http://markenwerk.github.io/java-utils-json-handler/index.html?net/markenwerk/utils/json/handler/IdleJsonHandler.html
 [JsonHandler]: http://markenwerk.github.io/java-utils-json-handler/index.html?net/markenwerk/utils/json/handler/JsonHandler.html
 [JsonHandlingException]: http://markenwerk.github.io/java-utils-json-handler/index.html?net/markenwerk/utils/json/handler/JsonHandlingException.html
 [NullJsonHandler]: http://markenwerk.github.io/java-utils-json-handler/index.html?net/markenwerk/utils/json/handler/NullJsonHandler.html
