@@ -178,27 +178,27 @@ handler.onDocumentBegin();
 handler.onDocumentEnd();
 ```
 
-[IdleJsonHandler]: http://markenwerk.github.io/java-utils-json-handler/index.html?net/markenwerk/utils/json/handler/IdleJsonHandler.html
-[JsonHandler]: http://markenwerk.github.io/java-utils-json-handler/index.html?net/markenwerk/utils/json/handler/JsonHandler.html
-[JsonHandlingException]: http://markenwerk.github.io/java-utils-json-handler/index.html?net/markenwerk/utils/json/handler/JsonHandlingException.html
-[NullJsonHandler]: http://markenwerk.github.io/java-utils-json-handler/index.html?net/markenwerk/utils/json/handler/NullJsonHandler.html
+[IdleJsonHandler]: https://markenwerk.github.io/java-utils-json-handler/index.html?net/markenwerk/utils/json/handler/IdleJsonHandler.html
+[JsonHandler]: https://markenwerk.github.io/java-utils-json-handler/index.html?net/markenwerk/utils/json/handler/JsonHandler.html
+[JsonHandlingException]: https://markenwerk.github.io/java-utils-json-handler/index.html?net/markenwerk/utils/json/handler/JsonHandlingException.html
+[NullJsonHandler]: https://markenwerk.github.io/java-utils-json-handler/index.html?net/markenwerk/utils/json/handler/NullJsonHandler.html
 
-[AppendingJavaTextJsonHandler]: https://markenwerk.github.io/java-utils-json-handler-text/index.html?net/markenwerk/utils/json/handler/text/AppendingJavaTextJsonHandler.html
-[AppendingJsonTextJsonHandler]: https://markenwerk.github.io/java-utils-json-handler-text/index.html?net/markenwerk/utils/json/handler/text/AppendingJsonTextJsonHandler.html
-[JavaTextJsonHandler]: http://markenwerk.github.io/java-utils-json-handler-text/index.html?net/markenwerk/utils/json/handler/text/JavaTextJsonHandler.html
-[JsonTextJsonHandler]: http://markenwerk.github.io/java-utils-json-handler-text/index.html?net/markenwerk/utils/json/handler/text/JsonTextJsonHandler.html
+[AppendingJavaTextJsonHandler]: https://markenwerk.github.io/java-utils-json-handler-text/index.html?net/markenwerk/utils/json/common/handler/text/AppendingJavaTextJsonHandler.html
+[AppendingJsonTextJsonHandler]: https://markenwerk.github.io/java-utils-json-handler-text/index.html?net/markenwerk/utils/json/common/handler/text/AppendingJsonTextJsonHandler.html
+[JavaTextJsonHandler]: https://markenwerk.github.io/java-utils-json-handler-text/index.html?net/markenwerk/utils/json/common/handler/text/JavaTextJsonHandler.html
+[JsonTextJsonHandler]: https://markenwerk.github.io/java-utils-json-handler-text/index.html?net/markenwerk/utils/json/common/handler/text/JsonTextJsonHandler.html
 
-[XmlDocumentJsonHandler]: http://markenwerk.github.io/java-utils-json-handler-xml/index.html?net/markenwerk/utils/json/handler/xml/XmlDocumentJsonHandler.html
+[XmlDocumentJsonHandler]: https://markenwerk.github.io/java-utils-json-handler-xml/index.html?net/markenwerk/utils/json/common/handler/xml/XmlDocumentJsonHandler.html
 
-[InvalidJsonValueException]: http://markenwerk.github.io/java-utils-json-common/index.html?net/markenwerk/utils/json/common/InvalidJsonValueException.html
+[InvalidJsonValueException]: https://markenwerk.github.io/java-utils-json-common/index.html?net/markenwerk/utils/json/common/InvalidJsonValueException.html
 
-[JsonPushParser]: http://markenwerk.github.io/java-utils-json-parser/index.html?net/markenwerk/utils/json/common/JsonPushParser.html
+[JsonPushParser]: https://markenwerk.github.io/java-utils-json-parser/index.html?net/markenwerk/utils/json/parser/JsonPushParser.html
 
 [JsonDocument]: https://markenwerk.github.io/java-utils-json-model/index.html?net/markenwerk/utils/json/model/JsonDocument.html
 [JsonValue]: https://markenwerk.github.io/java-utils-json-model/index.html?net/markenwerk/utils/json/model/JsonValue.html
 [JsonValueJsonHandler]: https://markenwerk.github.io/java-utils-json-model/index.html?net/markenwerk/utils/json/model/processing/JsonValueJsonHandler.html
 
-[Appendable]: http://docs.oracle.com/javase/8/docs/api/index.html?java/lang/Appendable.html
+[Appendable]: https://docs.oracle.com/javase/8/docs/api/index.html?java/lang/Appendable.html
 [Document]: https://docs.oracle.com/javase/8/docs/api/index.html?org/w3c/dom/Document.html
-[String]: http://docs.oracle.com/javase/8/docs/api/index.html?java/lang/String.html
+[String]: https://docs.oracle.com/javase/8/docs/api/index.html?java/lang/String.html
 
