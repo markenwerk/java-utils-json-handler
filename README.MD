@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/markenwerk/java-utils-json-handler.svg?branch=master)](https://travis-ci.org/markenwerk/java-utils-json-handler)
 [![Coverage Status](https://coveralls.io/repos/github/markenwerk/java-utils-json-handler/badge.svg?branch=master)](https://coveralls.io/github/markenwerk/java-utils-json-handler?branch=master)
-[![Dependency Status](https://www.versioneye.com/user/projects/57190b36fcd19a00518561ba/badge.svg)](https://www.versioneye.com/user/projects/57190b36fcd19a00518561ba)
+[![Dependency Status](https://www.versioneye.com/user/projects/571e4392fcd19a00415b27a7/badge.svg)](https://www.versioneye.com/user/projects/571e4392fcd19a00415b27a7)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/net.markenwerk/utils-json-handler/badge.svg)](https://maven-badges.herokuapp.com/maven-central/net.markenwerk/utils-json-handler)
 [![Issues](https://img.shields.io/github/issues/markenwerk/java-utils-json-handler.svg)](https://github.com/markenwerk/java-utils-json-handler/issues)
 [![MIT License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://github.com/markenwerk/java-utils-json-handler/blob/master/LICENSE)
