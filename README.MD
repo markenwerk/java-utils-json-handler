@@ -43,11 +43,11 @@ This library provides the [`JsonHandler`][JsonHandler] interface which provides 
 - A [`AppendingJsonTextJsonHandler`][AppendingJsonTextJsonHandler] from the JSON [text handler library](https://github.com/markenwerk/java-utils-json-handler-text) appends a JSON text that represents the described JSON document to an [`Appendable`][Appendable]. 
 - A [`JavaTextJsonHandler`][JavaTextJsonHandler] from the JSON [text handler library](https://github.com/markenwerk/java-utils-json-handler-text) creates a [`String`][String] containing a text that mimics the `toString()` behavior of Java collection classes and represents the described JSON document. 
 - A [`JsonTextJsonHandler`][JsonTextJsonHandler] from the JSON [text handler library](https://github.com/markenwerk/java-utils-json-handler-text) creates a [`String`][String] containing a JSON text that represents the described JSON document. 
-- A [`JsonValueJsonHandler`][JsonValueJsonHandler] creates a [`JsonValue`] that represents the described JSON document. 
+- A [`JsonValueJsonHandler`][JsonValueJsonHandler] creates a [`JsonValue`][JsonValue] that represents the described JSON document. 
 - A [`NullJsonHandler`][NullJsonHandler] from this library is an empty implementation that does nothing.
 - A [`XmlDocumentJsonHandler`][XmlDocumentJsonHandler] from the JSON [XML handler library](https://github.com/markenwerk/java-utils-json-handler-xml) creates a XML [`Document`][Document] that represents the described JSON document.
 
-#### Available used of JSON handlers
+#### Available users of JSON handlers
 
 - A [`JsonDocument`][JsonDocument] from the JSON [domain model library](https://github.com/markenwerk/java-utils-json-model) uses a [`JsonHandler`][JsonHandler] to describe its root [`JsonValue`][JsonValue].
 - A [`JsonPushParser`][JsonPushParser] from the fast JSON [parser library](https://github.com/markenwerk/java-utils-json-parser) uses a [`JsonHandler`][JsonHandler] to describe the parsed JSON socument. 
