@@ -21,8 +21,8 @@
  */
 package net.markenwerk.utils.json.handler;
 
+import net.markenwerk.utils.json.common.InvalidJsonNameException;
 import net.markenwerk.utils.json.common.InvalidJsonValueException;
-
 
 /**
  * A {@link JsonHandler} provides a collection of callback methods that can be
@@ -121,11 +121,12 @@ public interface JsonHandler<Result> {
 	 * @param name
 	 *            The name for the next JSON value.
 	 * 
-	 * 
+	 * @throws InvalidJsonNameException
+	 *             If the given value is {@literal null}.
 	 * @throws JsonHandlingException
 	 *             If the handling failed.
 	 */
-	public void onName(String name) throws JsonHandlingException;
+	public void onName(String name) throws InvalidJsonNameException, JsonHandlingException;
 
 	/**
 	 * Called when the parsing of a JSON array or JSON object encountered

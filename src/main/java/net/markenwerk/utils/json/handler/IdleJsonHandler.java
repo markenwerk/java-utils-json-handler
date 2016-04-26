@@ -21,6 +21,7 @@
  */
 package net.markenwerk.utils.json.handler;
 
+import net.markenwerk.utils.json.common.InvalidJsonNameException;
 import net.markenwerk.utils.json.common.InvalidJsonValueException;
 
 /**
@@ -30,9 +31,9 @@ import net.markenwerk.utils.json.common.InvalidJsonValueException;
  * 
  * <p>
  * An {@link IdleJsonHandler} also provides methods to
- * {@link IdleJsonHandler#checkDoubleValue(double) check} whether a double value
+ * {@link IdleJsonHandler#checkDouble(double) check} whether a double value
  * is a valid JSON number and to
- * {@link IdleJsonHandler#checkStringValue(String) check} whether a
+ * {@link IdleJsonHandler#checkString(String) check} whether a
  * {@link String} value is a valid JSON string.
  * 
  * @param <Result>
@@ -68,6 +69,25 @@ public abstract class IdleJsonHandler<Result> implements JsonHandler<Result> {
 
 	@Override
 	public void onName(String name) throws JsonHandlingException {
+		checkName(name);
+	}
+
+	/**
+	 * Checks that a {@link String} value is a valid JSON name.
+	 * 
+	 * @param name
+	 *            The name to be checked.
+	 * @return Always {@literal true}, if no {@link InvalidJsonNameException} is
+	 *         thrown.
+	 * 
+	 * @throws InvalidJsonNameException
+	 *             If the given name is {@literal null}.
+	 */
+	public static final boolean checkName(String name) throws InvalidJsonNameException {
+		if (null == name) {
+			throw new InvalidJsonNameException("name is null");
+		}
+		return true;
 	}
 
 	@Override
@@ -88,7 +108,7 @@ public abstract class IdleJsonHandler<Result> implements JsonHandler<Result> {
 
 	@Override
 	public void onDouble(double value) throws InvalidJsonValueException, JsonHandlingException {
-		checkDoubleValue(value);
+		checkDouble(value);
 	}
 
 	/**
@@ -103,7 +123,7 @@ public abstract class IdleJsonHandler<Result> implements JsonHandler<Result> {
 	 *             If the given value is {@link Double#isInfinite(double)
 	 *             infinite} or {@link Double#isNaN(double) not a number}.
 	 */
-	protected final boolean checkDoubleValue(double value) throws InvalidJsonValueException {
+	public static final boolean checkDouble(double value) throws InvalidJsonValueException {
 		if (Double.isNaN(value)) {
 			throw new InvalidJsonValueException("value is not a number");
 		}
@@ -115,7 +135,7 @@ public abstract class IdleJsonHandler<Result> implements JsonHandler<Result> {
 
 	@Override
 	public void onString(String value) throws InvalidJsonValueException, JsonHandlingException {
-		checkStringValue(value);
+		checkString(value);
 	}
 
 	/**
@@ -129,7 +149,7 @@ public abstract class IdleJsonHandler<Result> implements JsonHandler<Result> {
 	 * @throws InvalidJsonValueException
 	 *             If the given value is {@literal null}.
 	 */
-	protected final boolean checkStringValue(String value) throws InvalidJsonValueException {
+	public static final boolean checkString(String value) throws InvalidJsonValueException {
 		if (null == value) {
 			throw new InvalidJsonValueException("value is null");
 		}
