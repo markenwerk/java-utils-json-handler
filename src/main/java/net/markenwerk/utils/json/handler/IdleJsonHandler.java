@@ -23,7 +23,6 @@ package net.markenwerk.utils.json.handler;
 
 import net.markenwerk.utils.json.common.InvalidJsonValueException;
 
-
 /**
  * An {@link IdleJsonHandler} is a {@link JsonHandler} with empty methods. It is
  * intended a base for custom {@link JsonHandler} implementations, that don't
@@ -101,8 +100,8 @@ public abstract class IdleJsonHandler<Result> implements JsonHandler<Result> {
 	 *         is thrown.
 	 * 
 	 * @throws InvalidJsonValueException
-	 *             If the given value is {@link Double#isNaN(double) not a
-	 *             number} or {@link Double#isInfinite(double) infinite}.
+	 *             If the given value is {@link Double#isInfinite(double)
+	 *             infinite} or {@link Double#isNaN(double) not a number}.
 	 */
 	protected final boolean checkDoubleValue(double value) throws InvalidJsonValueException {
 		if (Double.isNaN(value)) {
