@@ -29,4 +29,10 @@ package net.markenwerk.utils.json.handler;
  */
 public final class NullJsonHandler extends IdleJsonHandler<Void> {
 
+	/**
+	 * Creates a new {@link NullJsonHandler}
+	 */
+	public NullJsonHandler() {
+	}
+
 }
