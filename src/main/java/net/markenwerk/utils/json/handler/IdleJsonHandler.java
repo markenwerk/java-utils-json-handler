@@ -21,6 +21,7 @@
  */
 package net.markenwerk.utils.json.handler;
 
+import net.markenwerk.utils.json.common.FailedJsonOperationException;
 import net.markenwerk.utils.json.common.InvalidJsonNameException;
 import net.markenwerk.utils.json.common.InvalidJsonValueException;
 
@@ -31,10 +32,9 @@ import net.markenwerk.utils.json.common.InvalidJsonValueException;
  * 
  * <p>
  * An {@link IdleJsonHandler} also provides methods to
- * {@link IdleJsonHandler#checkDouble(double) check} whether a double value
- * is a valid JSON number and to
- * {@link IdleJsonHandler#checkString(String) check} whether a
- * {@link String} value is a valid JSON string.
+ * {@link IdleJsonHandler#checkDouble(double) check} whether a double value is a
+ * valid JSON number and to {@link IdleJsonHandler#checkString(String) check}
+ * whether a {@link String} value is a valid JSON string.
  * 
  * @param <Result>
  *            The result type.
@@ -44,31 +44,31 @@ import net.markenwerk.utils.json.common.InvalidJsonValueException;
 public abstract class IdleJsonHandler<Result> implements JsonHandler<Result> {
 
 	@Override
-	public void onDocumentBegin() throws JsonHandlingException {
+	public void onDocumentBegin() throws FailedJsonOperationException {
 	}
 
 	@Override
-	public void onDocumentEnd() throws JsonHandlingException {
+	public void onDocumentEnd() throws FailedJsonOperationException {
 	}
 
 	@Override
-	public void onArrayBegin() throws JsonHandlingException {
+	public void onArrayBegin() throws FailedJsonOperationException {
 	}
 
 	@Override
-	public void onArrayEnd() throws JsonHandlingException {
+	public void onArrayEnd() throws FailedJsonOperationException {
 	}
 
 	@Override
-	public void onObjectBegin() throws JsonHandlingException {
+	public void onObjectBegin() throws FailedJsonOperationException {
 	}
 
 	@Override
-	public void onObjectEnd() throws JsonHandlingException {
+	public void onObjectEnd() throws FailedJsonOperationException {
 	}
 
 	@Override
-	public void onName(String name) throws JsonHandlingException {
+	public void onName(String name) throws FailedJsonOperationException {
 		checkName(name);
 	}
 
@@ -91,23 +91,23 @@ public abstract class IdleJsonHandler<Result> implements JsonHandler<Result> {
 	}
 
 	@Override
-	public void onNext() throws JsonHandlingException {
+	public void onNext() throws FailedJsonOperationException {
 	}
 
 	@Override
-	public void onNull() throws JsonHandlingException {
+	public void onNull() throws FailedJsonOperationException {
 	}
 
 	@Override
-	public void onBoolean(boolean value) throws JsonHandlingException {
+	public void onBoolean(boolean value) throws FailedJsonOperationException {
 	}
 
 	@Override
-	public void onLong(long value) throws JsonHandlingException {
+	public void onLong(long value) throws FailedJsonOperationException {
 	}
 
 	@Override
-	public void onDouble(double value) throws InvalidJsonValueException, JsonHandlingException {
+	public void onDouble(double value) throws InvalidJsonValueException, FailedJsonOperationException {
 		checkDouble(value);
 	}
 
@@ -134,7 +134,7 @@ public abstract class IdleJsonHandler<Result> implements JsonHandler<Result> {
 	}
 
 	@Override
-	public void onString(String value) throws InvalidJsonValueException, JsonHandlingException {
+	public void onString(String value) throws InvalidJsonValueException, FailedJsonOperationException {
 		checkString(value);
 	}
 
@@ -157,7 +157,7 @@ public abstract class IdleJsonHandler<Result> implements JsonHandler<Result> {
 	}
 
 	@Override
-	public Result getResult() throws JsonHandlingException {
+	public Result getResult() throws FailedJsonOperationException {
 		return null;
 	}
 

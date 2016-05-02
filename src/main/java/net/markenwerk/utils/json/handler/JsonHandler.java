@@ -21,6 +21,7 @@
  */
 package net.markenwerk.utils.json.handler;
 
+import net.markenwerk.utils.json.common.FailedJsonOperationException;
 import net.markenwerk.utils.json.common.InvalidJsonNameException;
 import net.markenwerk.utils.json.common.InvalidJsonValueException;
 
@@ -41,24 +42,24 @@ public interface JsonHandler<Result> {
 	 * 
 	 * <p>
 	 * Implementers should catch any exception and wrap them in a
-	 * {@link JsonHandlingException}.
+	 * {@link FailedJsonOperationException}.
 	 * 
-	 * @throws JsonHandlingException
+	 * @throws FailedJsonOperationException
 	 *             If the handling failed.
 	 */
-	public void onDocumentBegin() throws JsonHandlingException;
+	public void onDocumentBegin() throws FailedJsonOperationException;
 
 	/**
 	 * Called when the parsing of a JSON document ended.
 	 * 
 	 * <p>
 	 * Implementers should catch any exception and wrap them in a
-	 * {@link JsonHandlingException}.
+	 * {@link FailedJsonOperationException}.
 	 * 
-	 * @throws JsonHandlingException
+	 * @throws FailedJsonOperationException
 	 *             If the handling failed.
 	 */
-	public void onDocumentEnd() throws JsonHandlingException;
+	public void onDocumentEnd() throws FailedJsonOperationException;
 
 	/**
 	 * Called when the parsing of a JSON array started. A corresponding call for
@@ -66,24 +67,24 @@ public interface JsonHandler<Result> {
 	 * 
 	 * <p>
 	 * Implementers should catch any exception and wrap them in a
-	 * {@link JsonHandlingException}.
+	 * {@link FailedJsonOperationException}.
 	 * 
-	 * @throws JsonHandlingException
+	 * @throws FailedJsonOperationException
 	 *             If the handling failed.
 	 */
-	public void onArrayBegin() throws JsonHandlingException;
+	public void onArrayBegin() throws FailedJsonOperationException;
 
 	/**
 	 * Called when the parsing of a JSON array ended.
 	 * 
 	 * <p>
 	 * Implementers should catch any exception and wrap them in a
-	 * {@link JsonHandlingException}.
+	 * {@link FailedJsonOperationException}.
 	 * 
-	 * @throws JsonHandlingException
+	 * @throws FailedJsonOperationException
 	 *             If the handling failed.
 	 */
-	public void onArrayEnd() throws JsonHandlingException;
+	public void onArrayEnd() throws FailedJsonOperationException;
 
 	/**
 	 * Called when the parsing of a JSON object started. A corresponding call
@@ -91,24 +92,24 @@ public interface JsonHandler<Result> {
 	 * 
 	 * <p>
 	 * Implementers should catch any exception and wrap them in a
-	 * {@link JsonHandlingException}.
+	 * {@link FailedJsonOperationException}.
 	 * 
-	 * @throws JsonHandlingException
+	 * @throws FailedJsonOperationException
 	 *             If the handling failed.
 	 */
-	public void onObjectBegin() throws JsonHandlingException;
+	public void onObjectBegin() throws FailedJsonOperationException;
 
 	/**
 	 * Called when the parsing of a JSON object ended.
 	 * 
 	 * <p>
 	 * Implementers should catch any exception and wrap them in a
-	 * {@link JsonHandlingException}.
+	 * {@link FailedJsonOperationException}.
 	 * 
-	 * @throws JsonHandlingException
+	 * @throws FailedJsonOperationException
 	 *             If the handling failed.
 	 */
-	public void onObjectEnd() throws JsonHandlingException;
+	public void onObjectEnd() throws FailedJsonOperationException;
 
 	/**
 	 * Called when the parsing of a JSON object encountered the name for the
@@ -116,17 +117,17 @@ public interface JsonHandler<Result> {
 	 * 
 	 * <p>
 	 * Implementers should catch any exception and wrap them in a
-	 * {@link JsonHandlingException}.
+	 * {@link FailedJsonOperationException}.
 	 * 
 	 * @param name
 	 *            The name for the next JSON value.
 	 * 
 	 * @throws InvalidJsonNameException
 	 *             If the given value is {@literal null}.
-	 * @throws JsonHandlingException
+	 * @throws FailedJsonOperationException
 	 *             If the handling failed.
 	 */
-	public void onName(String name) throws InvalidJsonNameException, JsonHandlingException;
+	public void onName(String name) throws InvalidJsonNameException, FailedJsonOperationException;
 
 	/**
 	 * Called when the parsing of a JSON array or JSON object encountered
@@ -134,39 +135,39 @@ public interface JsonHandler<Result> {
 	 * 
 	 * <p>
 	 * Implementers should catch any exception and wrap them in a
-	 * {@link JsonHandlingException}.
+	 * {@link FailedJsonOperationException}.
 	 * 
-	 * @throws JsonHandlingException
+	 * @throws FailedJsonOperationException
 	 *             If the handling failed.
 	 */
-	public void onNext() throws JsonHandlingException;
+	public void onNext() throws FailedJsonOperationException;
 
 	/**
 	 * Called when the parsing of a JSON object encountered a JSON null.
 	 * 
 	 * <p>
 	 * Implementers should catch any exception and wrap them in a
-	 * {@link JsonHandlingException}.
+	 * {@link FailedJsonOperationException}.
 	 * 
-	 * @throws JsonHandlingException
+	 * @throws FailedJsonOperationException
 	 *             If the handling failed.
 	 */
-	public void onNull() throws JsonHandlingException;
+	public void onNull() throws FailedJsonOperationException;
 
 	/**
 	 * Called when the parsing of a JSON object encountered a JSON boolean.
 	 * 
 	 * <p>
 	 * Implementers should catch any exception and wrap them in a
-	 * {@link JsonHandlingException}.
+	 * {@link FailedJsonOperationException}.
 	 * 
 	 * @param value
 	 *            The value of the JSON boolean.
 	 * 
-	 * @throws JsonHandlingException
+	 * @throws FailedJsonOperationException
 	 *             If the handling failed.
 	 */
-	public void onBoolean(boolean value) throws JsonHandlingException;
+	public void onBoolean(boolean value) throws FailedJsonOperationException;
 
 	/**
 	 * Called when the parsing of a JSON object encountered a JSON number, that
@@ -174,16 +175,16 @@ public interface JsonHandler<Result> {
 	 * 
 	 * <p>
 	 * Implementers should catch any exception and wrap them in a
-	 * {@link JsonHandlingException}.
+	 * {@link FailedJsonOperationException}.
 	 * 
 	 * @param value
 	 *            The value of the JSON number.
 	 * 
 	 * 
-	 * @throws JsonHandlingException
+	 * @throws FailedJsonOperationException
 	 *             If the handling failed.
 	 */
-	public void onLong(long value) throws JsonHandlingException;
+	public void onLong(long value) throws FailedJsonOperationException;
 
 	/**
 	 * Called when the parsing of a JSON object encountered a JSON number, that
@@ -191,7 +192,7 @@ public interface JsonHandler<Result> {
 	 * 
 	 * <p>
 	 * Implementers should catch any exception and wrap them in a
-	 * {@link JsonHandlingException}.
+	 * {@link FailedJsonOperationException}.
 	 * 
 	 * @param value
 	 *            The value of the JSON number.
@@ -199,40 +200,40 @@ public interface JsonHandler<Result> {
 	 * @throws InvalidJsonValueException
 	 *             If the given value is {@link Double#isNaN(double) not a
 	 *             number} or {@link Double#isInfinite(double) infinite}.
-	 * @throws JsonHandlingException
+	 * @throws FailedJsonOperationException
 	 *             If the handling failed.
 	 */
-	public void onDouble(double value) throws InvalidJsonValueException, JsonHandlingException;
+	public void onDouble(double value) throws InvalidJsonValueException, FailedJsonOperationException;
 
 	/**
 	 * Called when the parsing of a JSON object encountered a JSON string.
 	 * 
 	 * <p>
 	 * Implementers should catch any exception and wrap them in a
-	 * {@link JsonHandlingException}.
+	 * {@link FailedJsonOperationException}.
 	 * 
 	 * @param value
 	 *            The value of the JSON string.
 	 * 
 	 * @throws InvalidJsonValueException
 	 *             If the given value is {@literal null}.
-	 * @throws JsonHandlingException
+	 * @throws FailedJsonOperationException
 	 *             If the handling failed.
 	 */
-	public void onString(String value) throws InvalidJsonValueException, JsonHandlingException;
+	public void onString(String value) throws InvalidJsonValueException, FailedJsonOperationException;
 
 	/**
 	 * Returns the calculated result.
 	 * 
 	 * <p>
 	 * Implementers should catch any exception and wrap them in a
-	 * {@link JsonHandlingException}.
+	 * {@link FailedJsonOperationException}.
 	 * 
 	 * @return The calculated result.
 	 * 
-	 * @throws JsonHandlingException
+	 * @throws FailedJsonOperationException
 	 *             If the handling failed.
 	 */
-	public Result getResult() throws JsonHandlingException;
+	public Result getResult() throws FailedJsonOperationException;
 
 }
