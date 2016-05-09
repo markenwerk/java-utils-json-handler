@@ -21,9 +21,9 @@
  */
 package net.markenwerk.utils.json.handler;
 
-import net.markenwerk.utils.json.common.FailedJsonOperationException;
-import net.markenwerk.utils.json.common.InvalidJsonNameException;
-import net.markenwerk.utils.json.common.InvalidJsonValueException;
+import net.markenwerk.utils.json.common.JsonException;
+import net.markenwerk.utils.json.common.JsonIndexException;
+import net.markenwerk.utils.json.common.JsonValueException;
 
 /**
  * An {@link IdleJsonHandler} is a {@link JsonHandler} with empty methods. It is
@@ -44,31 +44,31 @@ import net.markenwerk.utils.json.common.InvalidJsonValueException;
 public abstract class IdleJsonHandler<Result> implements JsonHandler<Result> {
 
 	@Override
-	public void onDocumentBegin() throws FailedJsonOperationException {
+	public void onDocumentBegin() throws JsonException {
 	}
 
 	@Override
-	public void onDocumentEnd() throws FailedJsonOperationException {
+	public void onDocumentEnd() throws JsonException {
 	}
 
 	@Override
-	public void onArrayBegin() throws FailedJsonOperationException {
+	public void onArrayBegin() throws JsonException {
 	}
 
 	@Override
-	public void onArrayEnd() throws FailedJsonOperationException {
+	public void onArrayEnd() throws JsonException {
 	}
 
 	@Override
-	public void onObjectBegin() throws FailedJsonOperationException {
+	public void onObjectBegin() throws JsonException {
 	}
 
 	@Override
-	public void onObjectEnd() throws FailedJsonOperationException {
+	public void onObjectEnd() throws JsonException {
 	}
 
 	@Override
-	public void onName(String name) throws FailedJsonOperationException {
+	public void onName(String name) throws JsonException {
 		checkName(name);
 	}
 
@@ -77,37 +77,37 @@ public abstract class IdleJsonHandler<Result> implements JsonHandler<Result> {
 	 * 
 	 * @param name
 	 *            The name to be checked.
-	 * @return Always {@literal true}, if no {@link InvalidJsonNameException} is
+	 * @return Always {@literal true}, if no {@link JsonIndexException} is
 	 *         thrown.
 	 * 
-	 * @throws InvalidJsonNameException
+	 * @throws JsonIndexException
 	 *             If the given name is {@literal null}.
 	 */
-	public static final boolean checkName(String name) throws InvalidJsonNameException {
+	public static final boolean checkName(String name) throws JsonIndexException {
 		if (null == name) {
-			throw new InvalidJsonNameException("name is null");
+			throw new JsonIndexException("name is null");
 		}
 		return true;
 	}
 
 	@Override
-	public void onNext() throws FailedJsonOperationException {
+	public void onNext() throws JsonException {
 	}
 
 	@Override
-	public void onNull() throws FailedJsonOperationException {
+	public void onNull() throws JsonException {
 	}
 
 	@Override
-	public void onBoolean(boolean value) throws FailedJsonOperationException {
+	public void onBoolean(boolean value) throws JsonException {
 	}
 
 	@Override
-	public void onLong(long value) throws FailedJsonOperationException {
+	public void onLong(long value) throws JsonException {
 	}
 
 	@Override
-	public void onDouble(double value) throws InvalidJsonValueException, FailedJsonOperationException {
+	public void onDouble(double value) throws JsonValueException, JsonException {
 		checkDouble(value);
 	}
 
@@ -116,25 +116,25 @@ public abstract class IdleJsonHandler<Result> implements JsonHandler<Result> {
 	 * 
 	 * @param value
 	 *            The value to be checked.
-	 * @return Always {@literal true}, if no {@link InvalidJsonValueException}
+	 * @return Always {@literal true}, if no {@link JsonValueException}
 	 *         is thrown.
 	 * 
-	 * @throws InvalidJsonValueException
+	 * @throws JsonValueException
 	 *             If the given value is {@link Double#isInfinite(double)
 	 *             infinite} or {@link Double#isNaN(double) not a number}.
 	 */
-	public static final boolean checkDouble(double value) throws InvalidJsonValueException {
+	public static final boolean checkDouble(double value) throws JsonValueException {
 		if (Double.isNaN(value)) {
-			throw new InvalidJsonValueException("value is not a number");
+			throw new JsonValueException("value is not a number");
 		}
 		if (Double.isInfinite(value)) {
-			throw new InvalidJsonValueException("value is infinite");
+			throw new JsonValueException("value is infinite");
 		}
 		return true;
 	}
 
 	@Override
-	public void onString(String value) throws InvalidJsonValueException, FailedJsonOperationException {
+	public void onString(String value) throws JsonValueException, JsonException {
 		checkString(value);
 	}
 
@@ -143,21 +143,21 @@ public abstract class IdleJsonHandler<Result> implements JsonHandler<Result> {
 	 * 
 	 * @param value
 	 *            The value to be checked.
-	 * @return Always {@literal true}, if no {@link InvalidJsonValueException}
+	 * @return Always {@literal true}, if no {@link JsonValueException}
 	 *         is thrown.
 	 * 
-	 * @throws InvalidJsonValueException
+	 * @throws JsonValueException
 	 *             If the given value is {@literal null}.
 	 */
-	public static final boolean checkString(String value) throws InvalidJsonValueException {
+	public static final boolean checkString(String value) throws JsonValueException {
 		if (null == value) {
-			throw new InvalidJsonValueException("value is null");
+			throw new JsonValueException("value is null");
 		}
 		return true;
 	}
 
 	@Override
-	public Result getResult() throws FailedJsonOperationException {
+	public Result getResult() throws JsonException {
 		return null;
 	}
 

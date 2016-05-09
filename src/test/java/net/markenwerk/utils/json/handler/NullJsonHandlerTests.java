@@ -3,7 +3,7 @@ package net.markenwerk.utils.json.handler;
 import org.junit.Assert;
 import org.junit.Test;
 
-import net.markenwerk.utils.json.common.InvalidJsonValueException;
+import net.markenwerk.utils.json.common.JsonValueException;
 
 @SuppressWarnings("javadoc")
 public class NullJsonHandlerTests {
@@ -98,7 +98,7 @@ public class NullJsonHandlerTests {
 
 	}
 
-	@Test(expected = InvalidJsonValueException.class)
+	@Test(expected = JsonValueException.class)
 	public void onDouble_infinite() {
 
 		JsonHandler<Void> handler = new NullJsonHandler();
@@ -109,7 +109,7 @@ public class NullJsonHandlerTests {
 
 	}
 
-	@Test(expected = InvalidJsonValueException.class)
+	@Test(expected = JsonValueException.class)
 	public void onDouble_notANumber() {
 
 		JsonHandler<Void> handler = new NullJsonHandler();
@@ -165,7 +165,7 @@ public class NullJsonHandlerTests {
 
 	}
 
-	@Test(expected = InvalidJsonValueException.class)
+	@Test(expected = JsonValueException.class)
 	public void onString_null() {
 
 		JsonHandler<Void> handler = new NullJsonHandler();
