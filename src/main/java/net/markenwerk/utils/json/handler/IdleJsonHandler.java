@@ -85,7 +85,7 @@ public abstract class IdleJsonHandler<Result> implements JsonHandler<Result> {
 	 */
 	public static final boolean checkName(String name) throws JsonIndexException {
 		if (null == name) {
-			throw new JsonIndexException("name is null");
+			throw new JsonIndexException("The given name is null");
 		}
 		return true;
 	}
@@ -125,10 +125,10 @@ public abstract class IdleJsonHandler<Result> implements JsonHandler<Result> {
 	 */
 	public static final boolean checkDouble(double value) throws JsonValueException {
 		if (Double.isNaN(value)) {
-			throw new JsonValueException("value is not a number");
+			throw new JsonValueException("The given value is not a number");
 		}
 		if (Double.isInfinite(value)) {
-			throw new JsonValueException("value is infinite");
+			throw new JsonValueException("The given value is infinite");
 		}
 		return true;
 	}
@@ -151,7 +151,7 @@ public abstract class IdleJsonHandler<Result> implements JsonHandler<Result> {
 	 */
 	public static final boolean checkString(String value) throws JsonValueException {
 		if (null == value) {
-			throw new JsonValueException("value is null");
+			throw new JsonValueException("The given value is null");
 		}
 		return true;
 	}
