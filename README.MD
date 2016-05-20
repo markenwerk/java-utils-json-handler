@@ -45,12 +45,14 @@ This library provides the [`JsonHandler`][JsonHandler] interface which provides 
 - A [`JsonTextJsonHandler`][JsonTextJsonHandler] from the JSON [text handler library](https://github.com/markenwerk/java-utils-json-handler-text) creates a [`String`][String] containing a JSON text that represents the described JSON document. 
 - A [`JsonValueJsonHandler`][JsonValueJsonHandler] creates a [`JsonValue`][JsonValue] that represents the described JSON document. 
 - A [`NullJsonHandler`][NullJsonHandler] from this library is an empty implementation that does nothing.
+- A [`RecordingJsonHandler`][RecordingJsonHandler] from the JSON [replay handler library](https://github.com/markenwerk/java-utils-json-handler-replay) creates a [`JsonReplay`][JsonReplay] containing a sequence of [`JsonEvents`][JsonEvent] that represent the described JSON document. 
 - A [`XmlDocumentJsonHandler`][XmlDocumentJsonHandler] from the JSON [XML handler library](https://github.com/markenwerk/java-utils-json-handler-xml) creates a XML [`Document`][Document] that represents the described JSON document.
 
 #### Available users of JSON handlers
 
 - A [`JsonDocument`][JsonDocument] from the JSON [domain model library](https://github.com/markenwerk/java-utils-json-model) uses a [`JsonHandler`][JsonHandler] to describe its root [`JsonValue`][JsonValue].
-- A [`JsonPushParser`][JsonPushParser] from the fast JSON [parser library](https://github.com/markenwerk/java-utils-json-parser) uses a [`JsonHandler`][JsonHandler] to describe the parsed JSON socument. 
+- A [`JsonPushParser`][JsonPushParser] from the fast JSON [parser library](https://github.com/markenwerk/java-utils-json-parser) uses a [`JsonHandler`][JsonHandler] to describe the parsed JSON document. 
+- A [`JsonReplay`][JsonReplay] from the JSON [replay handler library](https://github.com/markenwerk/java-utils-json-handler-replay) uses a [`JsonHandler`][JsonHandler] to describe the previously described JSON document. 
 
 #### Custom JSON handlers
 
@@ -187,6 +189,10 @@ handler.onDocumentEnd();
 [AppendingJsonTextJsonHandler]: https://markenwerk.github.io/java-utils-json-handler-text/index.html?net/markenwerk/utils/json/common/handler/text/AppendingJsonTextJsonHandler.html
 [JavaTextJsonHandler]: https://markenwerk.github.io/java-utils-json-handler-text/index.html?net/markenwerk/utils/json/common/handler/text/JavaTextJsonHandler.html
 [JsonTextJsonHandler]: https://markenwerk.github.io/java-utils-json-handler-text/index.html?net/markenwerk/utils/json/common/handler/text/JsonTextJsonHandler.html
+
+[JsonReplay]: https://markenwerk.github.io/java-utils-json-handler-replay/index.html?net/markenwerk/utils/json/common/handler/replay/JsonReplay.html
+[RecordingJsonHandler]: https://markenwerk.github.io/java-utils-json-handler-replay/index.html?net/markenwerk/utils/json/common/handler/replay/RecordingJsonHandler.html
+[JsonEvent]: https://markenwerk.github.io/java-utils-json-handler-replay/index.html?net/markenwerk/utils/json/common/handler/replay/events/JsonEvent.html
 
 [XmlDocumentJsonHandler]: https://markenwerk.github.io/java-utils-json-handler-xml/index.html?net/markenwerk/utils/json/common/handler/xml/XmlDocumentJsonHandler.html
 
